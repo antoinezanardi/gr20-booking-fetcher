@@ -36,7 +36,6 @@ const MISSING_SHELTER_DATES: Partial<Record<ShelterName, Date>> = {
   "Refuge de Manganu": new Date("2025-06-05"),
   "Refuge de l'Onda": new Date("2025-06-07"),
   "Refuge de Prati": new Date("2025-06-10"),
-  "Refuge de l'Usciolu": new Date("2025-06-11"),
 } as const;
 
 export {

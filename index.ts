@@ -166,16 +166,16 @@ function printAvailableDateBasedOnMissingShelterDates(shelters: Shelter[]): void
   for (const shelterName in MISSING_SHELTER_DATES) {
     const shelter = shelters.find((s) => s.name === shelterName) as Shelter;
     const missingDate = MISSING_SHELTER_DATES[shelterName as keyof typeof MISSING_SHELTER_DATES] as Date;
-    console.log(`🔍  Searching for availability on ${missingDate.toLocaleDateString("fr-FR")} for ${shelterName}...`);
+    console.log("🔍", `Searching for availability on ${missingDate.toLocaleDateString("fr-FR")} for ${shelterName}...`);
     const shelterAvailability = shelter.availability.find((s) => s.date.getTime() === missingDate.getTime());
     const isShelterAvailable = shelterAvailability?.sleepings.some((s) => s.availability !== "no-availability");
     if (isShelterAvailable) {
       hasShelterWithAvailability = true;
-      console.log(`✅  ${shelterName} is available on ${missingDate.toLocaleDateString("fr-FR")}`);
+      console.log("✅", `${shelterName} is available on ${missingDate.toLocaleDateString("fr-FR")}`);
     }
   }
   if (!hasShelterWithAvailability) {
-    console.log("❌  No shelters available for the specified dates.");
+    console.log("❌", "No shelters available for the specified dates.");
   } else {
     console.log("🎉  Some shelters are available for the specified dates.");
   }
