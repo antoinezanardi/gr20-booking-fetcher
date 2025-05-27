@@ -1,8 +1,7 @@
 on:
   schedule:
     - cron: '0 */4 * * *'
-  workflow_dispatch:
-    - name: Manual Trigger
+  workflow_dispatch: {}
   push:
     branches:
       - main
